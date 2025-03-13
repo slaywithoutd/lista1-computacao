@@ -95,14 +95,8 @@ let lista = ["banana", "maçã", "uva", "laranja"];
 lista.splice(1, 2, "abacaxi", "manga");
 console.log(lista);
 ```
-
-a) ["banana", "maçã", "uva", "abacaxi", "manga", "laranja"]
-
-b) ["banana", "abacaxi", "manga"]
-
 c) ["banana", "abacaxi", "manga", "laranja"]
-
-d) ["banana", "maçã", "uva", "abacaxi", "manga"]
+> O método .splice modifica uma array, removendo e/ou adicionando elementos. Nesse caso os números indicam de qual e até qual elemento da array algum elemento será retirado, assim, como os elementos começam a contar do 0, o elementos 1 e 2 são, respectivamente, maçã e uva, e esses serão os elementos que serão removidos. Os agumentos seguintes são os novos elementos que serão adicionados à array. Então, removendo do elemento 1 ao 2, a array fica: ["banana", "laranja"], em seguida, adicionando os novos elementos "abacaxi" e "manga" no lugar dos elementos removidos, a array fica: ["banana", "abacaxi", "manga", "laranja"]
 ______
 **6) Abaixo há duas afirmações sobre herança em JavaScript. Indique a alternativa correta e justifique sua resposta**
 
