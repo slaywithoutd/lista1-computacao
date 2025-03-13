@@ -23,13 +23,8 @@ console.log(y);
 let y = 10;
 ```
 a) A saída será undefined seguido de erro 
-
-b) A saída será 5 seguido de 10
-
-c) A saída será undefined seguido de undefined
-
-d) A saída será erro em ambas as linhas que utilizam console.log
-
+> Como foi usado o var para criar essa váriavel, ela *existe* em qualquer escopo, por isso não deu erro. Mas como ela só teve um valor atribuido depois do console.log já ter rodado, no momento em que x foi printado, x ainda não tinha valor, por isso foi printado "undefined".
+> Já no caso do y, ele foi criado utilizando o let, então essa variavel só existe dentro do próprio escopo. Como o console.log estava fora do escopo dessa variavel, quando y foi printado, y ainda não existia, por isso o código deu erro.
 
 **2) O seguinte código JavaScript tem um erro que impede sua execução correta. Analise e indique a opção que melhor corrige o problema. Justifique sua resposta.**
 
@@ -76,13 +71,10 @@ function calcularPreco(tipo) {
 console.log(calcularPreco("eletrônico"));
 ```
 
-a) O código imprime 1000.
-
 b) O código imprime 200.
+> Apesar de que se um humano olhar o código, conseguirá entender que o preço do "eletrônico" provavelmente é 1000, como um computador depende de instruções especificas para realizar uma função, e qualquer erro pode mudar completamente o resultado, nesse código a saída será 200. Isso acontece porque está faltando uma instrução break após o caso "eletrônico". Sem o break, o código continua executando os casos seguintes até chegar em um break, resultando no valor final de preço sendo 200.
 
-c) O código imprime 50.
 
-d) O código gera um erro.
 
 ______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
@@ -93,13 +85,8 @@ let resultado = numeros.map(x => x * 2).filter(x => x > 5).reduce((a, b) => a + 
 
 console.log(resultado);
 ```
-a) 0
-
-b) 6
-
-c) 18
-
 d) 24
+> Primeiro temos uma array com os números de 1 à 5. No código, o método .map multiplica cada um dos elementos da array por 2, assim, o resultado desse método é uma nova array com os números [2, 4, 6, 8, 10]. Em seguida, o método .filter cria uma nova array, porém filtra os elementos que farão parte dela, apenas permitindo números maiores que 5, essa nova array será [6, 8, 10]. Por fim, o método .reduce está somando todos os elementos dessa array, assim, reduzindo a array em um unico valor, no caso, 0 + 6 + 8 + 10 = 24. Por isso, o resultado printado será 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
