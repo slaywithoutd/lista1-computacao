@@ -40,11 +40,7 @@ console.log(soma(2, 0));
 
 a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
 
-b) Substituir if (a || b === 0) por if (a === 0 && b === 0)
-
-c) Substituir if (a || b === 0) por if (a && b === 0)
-
-d) Remover completamente a verificação if (a || b === 0)
+> A resposta correta é (a) Substituir if (a || b === 0) por if (a === 0 || b === 0). O erro acontece porque a condição original não verifica corretamente se a ou b são 0, já que b === 0 tem prioridade e pode causar um comportamento inesperado. A correção garante que a verificação funcione do jeito certo, comparando a e b diretamente com 0.
 
 ______
 **3) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
@@ -171,6 +167,27 @@ function somaArray(numeros) {
 }
 console.log(somaArray([1, 2, 3, 4]));
 ```
+
+Código Corrigido:
+```javascript
+function somaArray(numeros) {
+    // Inicializamos a variável 'soma' com 0 para garantir que ela comece do valor correto.
+    let soma = 0;
+
+    // Substituímos 'numeros.size' por 'numeros.length', pois 'length' é a propriedade correta para o tamanho do array.
+    for (let i = 0; i < numeros.length; i++) {
+        // Usamos '+=', pois queremos acumular o dobro de cada número em vez de sobrescrever o valor de 'soma'.
+        soma += 2 * numeros[i];
+    }
+
+    // Retornamos o valor acumulado em 'soma', que agora contém a soma do dobro de todos os números no array.
+    return soma;
+}
+
+// Testamos a função com um exemplo para verificar se o resultado está correto.
+console.log(somaArray([1, 2, 3, 4])); // Saída esperada: 20
+
+```
 ______
 10) Crie um exemplo prático no qual você tenha duas classes:
 
@@ -178,3 +195,42 @@ ______
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
+
+Exemplo prático:
+ ```javascript
+// Classe base 'Produto'
+class Produto {
+    // Construtor para inicializar os atributos 'nome' e 'preco'
+    constructor(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    // Método para calcular um desconto de 10% no preço
+    calcularDesconto() {
+        return this.preco * 0.9; // 10% de desconto
+    }
+}
+
+// Classe derivada 'Livro', que herda de 'Produto'
+class Livro extends Produto {
+    // Construtor herdando os atributos da classe base
+    constructor(nome, preco) {
+        // Chamada ao construtor da classe pai (Produto)
+        super(nome, preco);
+    }
+
+    // Sobrescrevendo o método 'calcularDesconto' para aplicar 20% de desconto
+    calcularDesconto() {
+        return this.preco * 0.8; // 20% de desconto
+    }
+}
+
+// Exemplo de uso das classes
+const produtoGeral = new Produto("Caneca", 50);
+console.log(`Preço com desconto (Produto): R$ ${produtoGeral.calcularDesconto().toFixed(2)}`);
+
+const livro = new Livro("Livro de JavaScript", 100);
+console.log(`Preço com desconto (Livro): R$ ${livro.calcularDesconto().toFixed(2)}`);
+
+```
