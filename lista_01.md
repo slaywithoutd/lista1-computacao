@@ -103,14 +103,10 @@ ______
 I. A herança é utilizada para compartilhar métodos e propriedades entre classes em JavaScript, permitindo que uma classe herde os métodos de outra sem a necessidade de repetir código.  
 II. Em JavaScript, a herança é implementada através da palavra-chave `extends`.
 
-
 a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+> I está correta pois a herança realmente permite que uma classe herde os métodos de outra sem necessidade de repetir código.
+> II está correta e justifica a primeira afirmação porque é atraves da palavra-chave `extends` que a herença é implementada, permitindo que uma classe derive de outra
 
-b) As duas afirmações são verdadeiras, mas a segunda não justifica a primeira.
-
-c) A primeira afirmação é verdadeira, e a segunda é falsa.
-
-d) A primeira afirmação é falsa, e a segunda é verdadeira.
 ______
 **7) Dado o seguinte código. Indique a alternativa correta e justifique sua resposta.**
 
@@ -148,11 +144,7 @@ Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
 a) I e II são verdadeiras.
 
-b) I, II e III são verdadeiras.
-
-c) Apenas II é verdadeira.
-
-d) Apenas I é verdadeira.
+> A classe Funcionario realmente herda de Pessoa e pode acessar nome e idade diretamente, pois a herança em JavaScript funciona com extends. Além disso, o método apresentar() de Funcionario sobrescreve o da classe Pessoa, mas ainda o chama usando super.apresentar(), garantindo que a apresentação original aconteça antes de exibir o salário. Já a afirmação III está errada, pois JavaScript suporta herança de classes.
 
 ______
 
@@ -161,14 +153,9 @@ ______
 **Asserção:** O conceito de polimorfismo em Programação Orientada a Objetos permite que objetos de diferentes tipos respondam à mesma mensagem de maneiras diferentes.  
 **Razão:** Em JavaScript, o polimorfismo pode ser implementado utilizando o método de sobrecarga de métodos em uma classe.
 
-a) A asserção é falsa e a razão é verdadeira.
-
 b) A asserção é verdadeira e a razão é falsa.
 
-c) A asserção é verdadeira e a razão é verdadeira, mas a razão não explica a asserção.
-
-d) A asserção é verdadeira e a razão é verdadeira, e a razão explica a asserção.
-
+> O polimorfismo realmente permite que diferentes objetos respondam à mesma mensagem de formas distintas, como quando uma subclasse sobrescreve um método da classe pai. No entanto, a razão está errada porque JavaScript não suporta sobrecarga de métodos (definir múltiplos métodos com o mesmo nome e assinaturas diferentes). Em JavaScript, o polimorfismo ocorre principalmente por sobrescrita de métodos e pelo uso dinâmico de tipos.
 ______
 
 # Questões dissertativas
